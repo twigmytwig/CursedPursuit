@@ -1,0 +1,3 @@
+res://Scenes/ghost.tscn
+res://Scenes/game.tscn
+res://Scripts/PlayerMovement/PlayerMovement.cs
