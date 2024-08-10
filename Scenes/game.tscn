@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bbq4u7xbhd1hb"]
+[gd_scene load_steps=7 format=3 uid="uid://bbq4u7xbhd1hb"]
 
 [ext_resource type="Texture2D" uid="uid://b2tufl1eiqxk6" path="res://Assets/Art/World/Wooden sturctures/WoodenMansion.png" id="1_et637"]
 [ext_resource type="PackedScene" uid="uid://dkriu6nniyl7n" path="res://Scenes/ghost.tscn" id="1_f2e2f"]
+[ext_resource type="PackedScene" uid="uid://dpwyevxfrpqpd" path="res://Scenes/player.tscn" id="3_0d0ei"]
+[ext_resource type="PackedScene" uid="uid://mv2hwewnojn" path="res://Scenes/ui.tscn" id="4_uc21r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scsg8"]
 texture = ExtResource("1_et637")
@@ -33,3 +35,17 @@ position = Vector2(21, -14)
 position = Vector2(-1, -12)
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="Player" parent="." instance=ExtResource("3_0d0ei")]
+position = Vector2(-90, -38)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("4_uc21r")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_bottom = 0.0
+offset_left = -1152.0
+offset_bottom = 648.0
+grow_horizontal = 0
+grow_vertical = 1

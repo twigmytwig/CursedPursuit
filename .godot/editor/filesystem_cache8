@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1723131156
+::res://::1723237782
 icon.svg::CompressedTexture2D::5124596334717693107::1723122050::1723122069::1::::<><>::
 ::res://Assets/::1723122155
 ::res://Assets/Art/::1723133862
@@ -22,7 +22,7 @@ ghost-anim-sprite-sheet13.png::CompressedTexture2D::6245418114643642436::1723122
 ghost-anim-sprite-sheet14.png::CompressedTexture2D::4578222946503902488::1723122586::1723122592::1::::<><>::
 ghost-anim-sprite-sheet15.png::CompressedTexture2D::1478878023502093745::1723122586::1723122592::1::::<><>::
 ghost-anim-sprite-sheet-sheet.png::CompressedTexture2D::5865474142800869052::1723123111::1723123114::1::::<><>::
-::res://Assets/Art/Sprites/ImportedFromOldProjects/::1723127334
+::res://Assets/Art/Sprites/ImportedFromOldProjects/::1723138267
 Attack-Projectiles.png::CompressedTexture2D::1480785815914006022::1598221017::1723127334::1::::<><>::
 Dark-eye-wizard-attack-sheet.png::CompressedTexture2D::2846144602665538428::1597016291::1723127333::1::::<><>::
 Dark-eye-wizard.png::CompressedTexture2D::8428894978204680349::1598712811::1723127334::1::::<><>::
@@ -31,6 +31,7 @@ ghost-anim-sprite-sheet.png::CompressedTexture2D::7582501345093160758::159762997
 player-sprite-sheet.png::CompressedTexture2D::5183396980137670416::1597888053::1723127333::1::::<><>::
 StoneTile.jpg::CompressedTexture2D::767485133754943637::1598217244::1723127334::1::::<><>::
 UI-Sprite-Sheet.png::CompressedTexture2D::6499664720192159834::1597968976::1723127333::1::::<><>::
+UI_Sheet.png::CompressedTexture2D::2271045983901844499::1619470167::1723138267::1::::<><>::
 Vine-enemy-sprite-sheet.png::CompressedTexture2D::5243483005003098057::1597546883::1723127333::1::::<><>::
 world-art-sprite-sheet.png::CompressedTexture2D::892120602662285317::1600215923::1723127333::1::::<><>::
 ::res://Assets/Art/Sprites/ImportedFromOldProjects/Paid-Sheets/::1723127333
@@ -41,9 +42,15 @@ WoodenMansion.png::CompressedTexture2D::4321966526186819535::1723133911::1723133
 ::res://Assets/Fonts/::1723122155
 ::res://Assets/Music/::1723122139
 ::res://Assets/Sounds/::1723122117
-::res://Scenes/::1723134060
-game.tscn::PackedScene::2491437796397059391::1723134060::0::1::::<><>::uid://b2tufl1eiqxk6::::res://Assets/Art/World/Wooden sturctures/WoodenMansion.png<>uid://dkriu6nniyl7n::::res://Scenes/ghost.tscn
-ghost.tscn::PackedScene::7896768010007493017::1723134060::0::1::::<><>::uid://cptjrcrrdy4su::::res://Assets/Art/Sprites/Ghost/GhostDefault/ghost-anim-sprite-sheet-sheet.png<>res://Scripts/PlayerMovement/PlayerMovement.cs
-::res://Scripts/::1723124856
+::res://Scenes/::1723162019
+game.tscn::PackedScene::2491437796397059391::1723162019::0::1::::<><>::uid://b2tufl1eiqxk6::::res://Assets/Art/World/Wooden sturctures/WoodenMansion.png<>uid://dkriu6nniyl7n::::res://Scenes/ghost.tscn<>uid://dpwyevxfrpqpd::::res://Scenes/player.tscn<>uid://mv2hwewnojn::::res://Scenes/ui.tscn
+ghost.tscn::PackedScene::7896768010007493017::1723162019::0::1::::<><>::uid://cptjrcrrdy4su::::res://Assets/Art/Sprites/Ghost/GhostDefault/ghost-anim-sprite-sheet-sheet.png<>res://Scripts/PlayerMovement/PlayerMovement.cs
+player.tscn::PackedScene::8258976506012476713::1723162019::0::1::::<><>::uid://bgsxt6fpr6bge::::res://Assets/Art/Sprites/ImportedFromOldProjects/Dark-eye-wizard-attack-sheet.png
+ui.tscn::PackedScene::26096208193061951::1723162019::0::1::::<><>::uid://7md2bwlkebsl::::res://Assets/Art/Sprites/ImportedFromOldProjects/UI_Sheet.png
+::res://Scripts/::1723139259
+::res://Scripts/Ghost/::1723162123
+Ghost.cs::CSharpScript::-1::1723162123::0::1::::<>Node<>::
+::res://Scripts/Player/::1723134539
+Player.cs::CSharpScript::-1::1723134539::0::1::::<>Node<>::
 ::res://Scripts/PlayerMovement/::1723127097
 PlayerMovement.cs::CSharpScript::-1::1723127097::0::1::::<>CharacterBody2D<>::
