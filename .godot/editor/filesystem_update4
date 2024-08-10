@@ -1,9 +1,11 @@
-res://Scripts/Multiplayer/MultiplayerController.cs
 res://Scripts/Ghost/Ghost.cs
 res://Scripts/PlayerMovement/PlayerMovement.cs
+res://Scripts/Multiplayer/GameManager.cs
+res://Scripts/Multiplayer/MultiplayerController.cs
 res://Scripts/Player/Player.cs
+res://Scenes/multiplayer_controller.tscn
 res://Scenes/game.tscn
 res://Scenes/ghost.tscn
 res://Scenes/player.tscn
 res://Scenes/ui.tscn
-res://Scenes/multiplayer_controller.tscn
+res://Scripts/Scenes/SceneManager.cs

@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbq4u7xbhd1hb"]
+[gd_scene load_steps=8 format=3 uid="uid://bbq4u7xbhd1hb"]
 
+[ext_resource type="Script" path="res://Scripts/Scenes/SceneManager.cs" id="1_7dqvn"]
 [ext_resource type="Texture2D" uid="uid://b2tufl1eiqxk6" path="res://Assets/Art/World/Wooden sturctures/WoodenMansion.png" id="1_et637"]
 [ext_resource type="PackedScene" uid="uid://dkriu6nniyl7n" path="res://Scenes/ghost.tscn" id="1_f2e2f"]
 [ext_resource type="PackedScene" uid="uid://dpwyevxfrpqpd" path="res://Scenes/player.tscn" id="3_0d0ei"]
@@ -22,19 +23,13 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_scsg8")
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_7dqvn")
+playerScene = ExtResource("1_f2e2f")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_038yi")
 format = 2
 layer_0/tile_data = PackedInt32Array(-131076, 0, 0, -65540, 0, 0, -4, 0, 0, 65532, 0, 0, 131068, 0, 0, 131069, 0, 0, 131070, 0, 0, 131071, 0, 0, 65536, 0, 0, 65537, 0, 0, 65538, 0, 0, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 5, 0, 0, -65531, 0, 0, -131067, 0, 0, -196603, 0, 0, -196604, 0, 0, -196605, 0, 0, -196606, 0, 0, -196607, 0, 0, -196608, 0, 0, -131073, 0, 0, -131074, 0, 0, -131075, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -65532, 0, 0, -65533, 0, 0, -65534, 0, 0, -65535, 0, 0, -65536, 0, 0, -1, 0, 0, -2, 0, 0, -3, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, -131077, 65536, 0, -196613, 65536, 0, -196612, 65536, 0, -196611, 65536, 0, -196610, 65536, 0, -196609, 65536, 0, -262144, 65536, 0, -262143, 65536, 0, -262142, 65536, 0, -262141, 65536, 0, -262140, 65536, 0, -262139, 65536, 0, -65541, 65536, 0, -5, 65536, 0, 65531, 65536, 0, 131067, 65536, 0, 196603, 65536, 0, 196604, 65536, 0, 196605, 65536, 0, 196606, 65536, 0, 196607, 65536, 0, 131072, 65536, 0, 131073, 65536, 0, 131074, 65536, 0, 131075, 65536, 0, 131076, 65536, 0, 131077, 65536, 0, 131078, 65536, 0, 65542, 65536, 0, 6, 65536, 0, -65530, 65536, 0, -131066, 65536, 0, -196602, 65536, 0, -262138, 65536, 0)
-
-[node name="Ghost" parent="." instance=ExtResource("1_f2e2f")]
-position = Vector2(21, -14)
-
-[node name="Camera2D" type="Camera2D" parent="Ghost"]
-position = Vector2(-1, -12)
-zoom = Vector2(4, 4)
-position_smoothing_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("3_0d0ei")]
 position = Vector2(-90, -38)
@@ -49,3 +44,20 @@ offset_left = -1152.0
 offset_bottom = 648.0
 grow_horizontal = 0
 grow_vertical = 1
+
+[node name="SpawnPoints" type="Node2D" parent="."]
+position = Vector2(-1, 1)
+
+[node name="0" type="Node2D" parent="SpawnPoints" groups=["PlayerSpawnPoints"]]
+
+[node name="1" type="Node2D" parent="SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(21, -77)
+
+[node name="2" type="Node2D" parent="SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(167, 39)
+
+[node name="3" type="Node2D" parent="SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(158, -73)
+
+[node name="4" type="Node2D" parent="SpawnPoints" groups=["PlayerSpawnPoints"]]
+position = Vector2(-100, 38)

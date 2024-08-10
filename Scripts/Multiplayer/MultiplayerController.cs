@@ -1,3 +1,4 @@
+using CursedPursuit.Scripts.Multiplayer;
 using Godot;
 using System;
 
@@ -44,6 +45,7 @@ public partial class MultiplayerController : Control
 	private void ConnectedToServer()
 	{
 		GD.Print("CONNECTED TO SERVER");
+		RpcId(1, "SendPlayerInfo", GetNode<LineEdit>("NameField").Text, Multiplayer.GetUniqueId()); //RPCID 1 means only the server can ruin this
 	}
 
 	/// <summary>
@@ -81,6 +83,8 @@ public partial class MultiplayerController : Control
 		peer.Host.Compress(ENetConnection.CompressionMode.RangeCoder); //TODO: FIND WHAT THE BEST COMPRESSION ALGO IS ACTUALYL
 		Multiplayer.MultiplayerPeer = peer;
 		GD.Print("Waiting for players...");
+
+		SendPlayerInfo(GetNode<LineEdit>("NameField").Text, 1); //ID is 1 bc host
 	}
 
 
@@ -103,9 +107,36 @@ public partial class MultiplayerController : Control
 	[Rpc(MultiplayerApi.RpcMode.AnyPeer, CallLocal = true,TransferMode = MultiplayerPeer.TransferModeEnum.Reliable)]
 	private void startGame()
 	{
+		foreach (var item in GameManager.Players)
+		{
+			GD.Print(item.Name + " : " + item.Id.ToString());
+		}
 		var scene = ResourceLoader.Load<PackedScene>("res://Scenes/game.tscn").Instantiate<Node2D>();
 		GetTree().Root.AddChild(scene);
 		this.Hide();
+	}
+
+	[Rpc(MultiplayerApi.RpcMode.AnyPeer)]
+	private void SendPlayerInfo(string name, int id)
+	{
+		PlayerInfo playerInfo = new PlayerInfo()
+		{
+			Id = id,
+			Name = name,
+		};
+
+		if (!GameManager.Players.Contains(playerInfo))
+		{
+			GameManager.Players.Add(playerInfo);
+		}
+
+		if (Multiplayer.IsServer())
+		{
+			foreach (var item in GameManager.Players)
+			{
+				Rpc("SendPlayerInfo", item.Name, item.Id);
+			}
+		}
 	}
 }
 
